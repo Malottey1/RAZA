@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>RAZA</title> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+<style>
+
+        .section-with-text h2 {
+            margin-bottom: 20px;
+            transition: font-size 0.5s ease-in-out;
+        }
+
+        .section-with-text h2:hover {
+            font-size: 2em; 
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <img src="logo.png" alt="Logo">
+        </div>
+    </header>
+
+    <div class="image-container">
+        <img src="wide-image3.jpeg" alt="Wide Image" class="parallax-image">
+    </div>
+
+    <div class="section-with-text">
+        <h2>Express Yourself</h2>
+        <p>We believe in the power of subtraction. Every line, every curve, every pixel serves a purpose, whispering a story without needing to shout.<br> We sculpt experiences that are as elegant as a single brushstroke, as timeless as a whisper in the wind. 
+            <br> In the cacophony of the digital age, we offer a sanctuary of quietude, where less truly is more, and every detail resonates with profound simplicity</p>
+
+        <div class="rising-images">
+            <figure>
+                <img src="4.jpeg" alt="Image 1">
+                <figcaption><strong>Men</strong></figcaption>
+            </figure>
+            <figure>
+                <img src="5.jpeg" alt="Image 2">
+                <figcaption><strong>Women</strong></figcaption>
+            </figure>
+            <figure>
+                <img src="3.jpeg" alt="Image 3">
+                <figcaption><strong>Kids</strong></figcaption>
+            </figure>
+        </div>
+    </div>
+
+    <footer style="font-weight: 500;">
+        © Raza 2024
+    </footer>
+
+    <script>
+
+        const risingImages = document.querySelectorAll('.rising-images img');
+        
+
+        window.addEventListener('scroll', () => {
+            const scrollPosition = window.scrollY;
+            risingImages.forEach(image => {
+                image.style.transform = `translateY(${50 - scrollPosition * 0.2}px)`;
+            });
+        });
+
+        const parallaxImage = document.querySelector('.parallax-image');
+
+        window.addEventListener('scroll', () => {
+            const scrollPosition = window.scrollY;
+            parallaxImage.style.transform = `translateY(${scrollPosition * 0.4}px)`;
+        });
+
+
+        const typingHeading = document.getElementById('typing-heading');
+
+        typingHeading.addEventListener('mouseenter', () => {
+            typingHeading.style.fontSize = '2em';
+        });
+
+        typingHeading.addEventListener('mouseleave', () => {
+            typingHeading.style.fontSize = '1.5em'; 
+        });
+    </script>
+
+</body>
+</html>
